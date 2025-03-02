@@ -1,168 +1,70 @@
-📂 Resume-website
- ├── 📄 index.html       (Main webpage)
- ├── 📄 style.css        (CSS for styling)
- ├── 📄 script.js        (JavaScript for interactivity)
- ├── 📂 assets           (Images & other assets)
- ├── 📄 README.md        (Code review & documentation)
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tristan's Resume</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
+
+    <!-- Header -->
     <header>
-        <h1>Tristan's Resume Website</h1>
-        <nav>
-            <a href="#about">About Me</a>
-            <a href="#resume">Resume</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-            <a href="#bibliography">Bibliography</a>
-        </nav>
+        <h1>Tristan's Resume</h1>
+        <p>Welcome to my personal resume website! </p>
     </header>
 
+    <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>Hi, I'm Tristan! I'm a student passionate about technology, coding, and design. 
-           This website showcases my skills, achievements, and experiences.</p>
+        <p>Hello! My name is Tristan, and I'm a student at munich international school with a strong work ethic and dedication to academics, and athletics. </p>
     </section>
 
-    <section id="resume">
-        <h2>My Resume</h2>
-        <div class="resume-container">
-            <iframe loading="lazy" 
-                src="https://www.canva.com/design/DAGfECz7EGI/oXq55EV_AQDD4e7b5Zux1Q/view?embed" 
-                allowfullscreen="allowfullscreen">
-            </iframe>
-        </div>
-        <p>
-            Download full resume:  
-            <a href="https://www.canva.com/design/DAGfECz7EGI/CnS82yyypYeyl-_BsueKmg/view"
-               target="_blank">Click Here</a>
-        </p>
-    </section>
+    <!-- Embedded Resume -->
+    <div style="position: relative; width: 100%; height: 0; padding-top: 129.4118%;
+    padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+    border-radius: 8px; will-change: transform;">
+        <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+            src="https://www.canva.com/design/DAGfECz7EGI/oXq55EV_AQDD4e7b5Zux1Q/view?embed" allowfullscreen="allowfullscreen">
+        </iframe>
+    </div>
 
-    <section id="skills">
-        <h2>My Skills</h2>
-        <canvas id="skillsChart"></canvas>
-    </section>
+    <!-- View Full Resume Link -->
+    <p>
+        <a href="https://www.canva.com/design/DAGfECz7EGI/oXq55EV_AQDD4e7b5Zux1Q/view" 
+           target="_blank" rel="noopener">
+           View Full Resume on Canva
+        </a>
+    </p>
 
+    <!-- Download Resume Link -->
+    <p>
+        <a href="resume.pdf" download>
+            📥 Download Resume (PDF)
+        </a>
+    </p>
+</section>
+
+   
+
+    <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:tristan@example.com">tristan@example.com</a></p>
-        <p>GitHub: <a href="https://github.com/Tristan-19" target="_blank">github.com/Tristan-19</a></p>
-    </section>
-
-    <section id="bibliography">
-        <h2>Bibliography</h2>
-        <ul>
-            <li><a href="https://www.w3schools.com/">W3Schools - HTML, CSS, JavaScript</a></li>
-            <li><a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a></li>
-            <li><a href="https://www.canva.com/">Canva - Resume Creation</a></li>
-            <li><a href="https://chartjs.org/">Chart.js - JavaScript Library</a></li>
-        </ul>
+        <form action="https://formspree.io/f/{your-email}" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
     </section>
 
     <footer>
-        <p>© 2025 Tristan. All Rights Reserved.</p>
+        <p>&copy; 2025 Tristan. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
-</html>
-
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
-    padding: 20px;
-}
-
-h1 {
-    color: #333;
-}
-
-nav {
-    background-color: #333;
-    padding: 10px;
-}
-
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.resume-container {
-    width: 100%;
-    max-width: 600px;
-    height: 500px;
-    margin: auto;
-    box-shadow: 0 2px 8px rgba(63, 69, 81, 0.16);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-canvas {
-    width: 100%;
-    max-width: 400px;
-    margin: auto;
-    display: block;
-}
-
-footer {
-    margin-top: 30px;
-    padding: 10px;
-    background: #333;
-    color: white;
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    const ctx = document.getElementById('skillsChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['HTML', 'CSS', 'JavaScript', 'Python', 'GitHub'],
-            datasets: [{
-                label: 'Skill Level',
-                data: [90, 85, 80, 70, 75],
-                backgroundColor: ['#FF5733', '#33FF57', '#3388FF', '#FFD700', '#8A2BE2']
-            }]
-        }
-    });
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-
-
-
-            
+</html> 
