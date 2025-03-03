@@ -13,6 +13,21 @@ document.addEventListener("DOMContentLoaded", function () {
             question: "Which sport do I play?",
             options: ["Baseball", "Football", "Ice Hockey", "Table Tennis"],
             answer: "Ice Hockey"
+        },
+        {
+            question: "What ice hockey team do I play for?",
+            options: ["Eisbären Berlin", "EC Bad Tolz", "SC Riessersee", "EHC Munchen"],
+            answer: "SC Riessersee"
+        },
+        {
+            question: "What school do I go to?",
+            options: ["Munich International School", "British International School Istanbul", "American International School in Cyprus", "Rome International School"],
+            answer: "Munich International School"
+        },
+        {
+            question: "What state was I born in?",
+            options: ["New York", "California", "Kansas", "Florida"],
+            answer: "New York"
         }
     ];
 
@@ -37,8 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 score++;
             }
         });
+
         resultContainer.innerHTML = `You got ${score} out of ${questions.length} correct!`;
-        
+
         // Redirect to home page after 3 seconds
         setTimeout(() => {
             window.location.href = "index.html";
@@ -48,3 +64,4 @@ document.addEventListener("DOMContentLoaded", function () {
     submitButton.addEventListener("click", checkAnswers);
     displayQuiz();
 });
+
