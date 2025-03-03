@@ -64,3 +64,4 @@ document.addEventListener("DOMContentLoaded", function () {
     submitButton.addEventListener("click", checkAnswers);
     displayQuiz();
 });
+
