@@ -25,6 +25,11 @@ document.addEventListener("DOMContentLoaded", function () {
             answer: "Munich International School"
         },
         {
+            question: "What is Tristan's favorite color?",
+            options: ["black", "bright pink", "neon yellow", "blue"],
+            answer: "Blue"
+        }
+        {
             question: "What state was I born in?",
             options: ["New York", "California", "Kansas", "Florida"],
             answer: "New York"
