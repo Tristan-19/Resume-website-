@@ -79,3 +79,4 @@ function showFinalScore() {
 
 // Load the first question when the page loads
 loadQuestion();
+
